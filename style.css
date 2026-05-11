@@ -1,0 +1,767 @@
+/* Общие сбросы */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif; /* Временно стандартный шрифт */
+    background-color: #000;
+}
+
+/* --- ШАПКА --- */
+.header-black {
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    font-weight: bold;
+}
+
+.header-black .logo {
+    font-size: 24px;
+    letter-spacing: 2px;
+}
+
+nav a {
+    color: #999;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #fff;
+}
+
+.cart {
+    font-size: 14px;
+    color: #999;
+    cursor: pointer;
+}
+
+/* --- ГЛАВНЫЙ ЭКРАН (Белый) --- */
+.hero-white {
+    background-color: #fff;
+    position: relative;
+    padding: 80px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    min-height: 60vh;
+}
+
+.hero-bg-blur {
+    position: absolute;
+    font-size: 300px;
+    font-weight: 900;
+    color: #4CFF2E; /* Тот самый зеленый */
+    filter: blur(20px);
+    opacity: 0.9;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+/* Декоративные звездочки */
+.star {
+    position: absolute;
+    font-size: 40px;
+    font-weight: bold;
+    color: #000;
+    z-index: 2;
+}
+.star-1 { top: 20%; left: 15%; }
+.star-2 { top: 15%; right: 20%; }
+.star-3 { bottom: 20%; left: 25%; }
+.star-4 { bottom: 30%; right: 15%; }
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    max-width: 700px;
+}
+
+.hero-content h1 {
+    font-size: 60px;
+    letter-spacing: 5px;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.hero-subtext {
+    margin-top: 20px;
+    font-size: 12px;
+    color: #333;
+}
+
+.btn-catalog {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 15px 50px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 30px;
+    letter-spacing: 1px;
+}
+
+/* --- ХИТ ПРОДАЖ --- */
+.featured-black {
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px 60px;
+}
+
+.featured-info {
+    max-width: 400px;
+}
+
+.featured-info h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.featured-desc {
+    font-size: 16px;
+    color: #ccc;
+    margin-bottom: 30px;
+    line-height: 1.4;
+}
+
+.featured-price {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.btn-add-cart {
+    background-color: #4CFF2E; /* Неоновый зеленый из макета */
+    color: #fff; /* Или #000, если в макете текст темный */
+    border: none;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.featured-img {
+    width: 60%;
+}
+
+.featured-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* --- ПОДВАЛ --- */
+.footer-black {
+    background-color: #000;
+    color: #4CFF2E; /* Зеленый текст */
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 60px;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 2;
+}
+/* --- СТИЛИ ДЛЯ СТРАНИЦЫ КАТАЛОГА --- */
+
+/* Делаем фон страницы белым, если мы в каталоге */
+.page-catalog {
+    background-color: #fff;
+    color: #000;
+}
+
+/* Зеленая точка возле корзины */
+.cart {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.cart-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: #4CFF2E;
+    border-radius: 50%;
+}
+
+.catalog-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+/* Меню фильтров */
+.catalog-filters {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.catalog-filters a {
+    text-decoration: none;
+    color: #000;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.catalog-filters a.active {
+    color: #4CFF2E; /* Зеленый активный пункт */
+}
+
+/* Секции каталога */
+.catalog-section {
+    margin-bottom: 80px;
+}
+
+.section-title {
+    color: #4CFF2E;
+    font-size: 24px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+/* Сетка товаров */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.product-card-light {
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card-light img {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Делает картинки квадратными */
+    object-fit: cover; /* Обрезает фото аккуратно, если пропорции другие */
+    border-radius: 40px; /* Сильное скругление как в макете */
+    margin-bottom: 20px;
+    background-color: #f5f5f5; /* Серый фон на случай прозрачных PNG */
+}
+
+.product-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
+/* Шрифт цены в стиле техно/киберпанк */
+.price-tech {
+    font-family: 'Syncopate', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: #000;
+}
+
+/* Кнопка "Добавить" (+) */
+.btn-add-plus {
+    width: 35px;
+    height: 35px;
+    background-color: #4CFF2E;
+    color: #000;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1;
+}
+
+/* Кнопка "Уже в корзине" (✔) */
+.btn-added {
+    width: 35px;
+    height: 35px;
+    background-color: #000;
+    color: #4CFF2E;
+    border: none;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* --- СТИЛИ ДЛЯ СТРАНИЦЫ "О НАС" --- */
+.page-about {
+    background-color: #fff;
+    color: #000;
+}
+
+.about-main {
+    position: relative;
+    overflow: hidden; /* Чтобы размытый фон не вылезал за края */
+    padding: 80px 20px;
+    min-height: 100vh;
+}
+
+/* Размытый фон */
+.about-bg-blur {
+    position: absolute;
+    font-size: 250px;
+    font-weight: 900;
+    color: #4CFF2E;
+    filter: blur(60px);
+    opacity: 0.4;
+    z-index: 1;
+    top: 0;
+    left: -10%;
+    pointer-events: none;
+}
+
+.blur-bottom {
+    top: auto;
+    bottom: -10%;
+    right: -10%;
+    left: auto;
+}
+
+.about-container {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2; /* Текст будет поверх размытого фона */
+}
+
+/* Верхний блок: фото + текст */
+.about-top {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    margin-bottom: 40px;
+}
+
+.about-photo {
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 40px; /* Квадрат со скругленными углами из макета */
+}
+
+.about-title {
+    font-size: 80px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    line-height: 1;
+}
+
+.about-intro p {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Нижний текстовый блок */
+.about-text-block {
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.about-text-block h3 {
+    font-size: 18px;
+    margin: 40px 0 20px 0;
+}
+
+.about-text-block ul {
+    margin-bottom: 40px;
+    padding-left: 20px;
+}
+
+.about-text-block li {
+    margin-bottom: 15px;
+}
+
+.signature {
+    margin-top: 40px;
+}
+/* --- СТИЛИ ДЛЯ ИНФОРМАЦИОННОЙ СТРАНИЦЫ (Оплата и доставка) --- */
+.page-info {
+    background-color: #fff;
+    color: #000;
+}
+
+.info-container {
+    max-width: 800px; /* Ограничиваем ширину для удобства чтения */
+    margin: 0 auto;
+    padding: 80px 20px;
+}
+
+.info-section {
+    margin-bottom: 80px;
+}
+
+.info-title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 900;
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+}
+
+.info-subtitle {
+    color: #4CFF2E; /* Зеленый цвет для подзаголовков */
+    font-size: 16px;
+    margin-top: 40px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.info-text {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Широкий шрифт для цифр и аббревиатур (как в макете) */
+.tech-text {
+    font-family: 'Syncopate', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+}
+/* --- СТИЛИ ДЛЯ СТРАНИЦЫ ЗАКАЗА --- */
+
+.order-header-block {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.order-subtitle-green {
+    color: #4CFF2E;
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.order-subtitle-bold {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.order-section {
+    margin-bottom: 60px;
+}
+
+.order-client-type {
+    font-size: 24px;
+    font-weight: 900;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+
+.order-item {
+    margin-bottom: 25px;
+}
+
+.order-item-title {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+/* Стилизация списков с точками */
+.order-list {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-bottom: 15px;
+}
+
+.order-list li {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 8px;
+}
+
+.order-note {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-top: 15px;
+}
+
+/* Финальный блок с кнопкой */
+.order-action-block {
+    text-align: center;
+    margin-top: 80px;
+    margin-bottom: 40px;
+}
+
+.order-action-block p {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+
+.btn-order-main {
+    display: inline-block;
+    background-color: #4CFF2E;
+    color: #fff; /* Или #000, если нужно сделать текст черным */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 15px 40px;
+    border-radius: 30px;
+    transition: background-color 0.3s;
+}
+
+.btn-order-main:hover {
+    background-color: #3ade22; /* Немного темнеет при наведении */
+}
+/* =========================================
+   СТИЛИ ДЛЯ ВЫЕЗЖАЮЩЕЙ КОРЗИНЫ
+   ========================================= */
+.cart-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    z-index: 1000;
+    display: flex;
+    justify-content: flex-end;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+.cart-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+.cart-panel {
+    width: 450px;
+    background: #fff;
+    height: 100%;
+    padding: 40px;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    color: #000;
+}
+.cart-overlay.active .cart-panel {
+    transform: translateX(0);
+}
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #000;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+}
+.cart-header h2 {
+    font-size: 20px;
+    font-weight: 900;
+}
+.close-cart {
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.cart-item img {
+    width: 60px;
+    height: 60px;
+    border-radius: 15px;
+    object-fit: cover;
+    background: #f5f5f5;
+}
+.cart-item-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-weight: bold;
+}
+.qty-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+.remove-item {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #000;
+}
+.cart-footer {
+    margin-top: auto;
+    border-top: 1px solid #000;
+    padding-top: 20px;
+}
+.cart-total {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 900;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+.btn-checkout {
+    display: block;
+    text-align: center;
+    background-color: #4CFF2E;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 15px;
+    border-radius: 30px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+.btn-checkout:hover {
+    background-color: #3ade22;
+}
+
+/* =========================================
+   СТИЛИ ДЛЯ СТРАНИЦЫ ОФОРМЛЕНИЯ ЗАКАЗА
+   ========================================= */
+.page-checkout {
+    background-color: #fff;
+    color: #000;
+}
+.checkout-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+.checkout-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #000;
+    padding-bottom: 20px;
+    margin-bottom: 40px;
+}
+.back-link {
+    font-size: 24px;
+    color: #000;
+    text-decoration: none;
+}
+.checkout-title {
+    font-size: 20px;
+    font-weight: 900;
+}
+.checkout-layout {
+    display: flex;
+    gap: 100px;
+}
+.checkout-form-section {
+    flex: 1;
+}
+.checkout-desc {
+    font-size: 14px;
+    margin-bottom: 40px;
+    line-height: 1.5;
+}
+.form-group {
+    margin-bottom: 20px;
+}
+.form-group label {
+    display: block;
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+.form-input {
+    width: 100%;
+    padding: 15px;
+    background-color: #E5E5E5; /* Светло-серый фон как в макете */
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    font-family: inherit;
+    outline: none;
+}
+.form-input:focus {
+    box-shadow: 0 0 0 2px #4CFF2E; /* Зеленая обводка при клике */
+}
+.phone-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.flag {
+    position: absolute;
+    left: 15px;
+    font-size: 14px;
+}
+.phone-group .form-input {
+    padding-left: 60px; /* Отступ для флага */
+}
+.form-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 30px 0;
+    font-size: 12px;
+}
+.btn-checkout-submit {
+    background-color: #4CFF2E;
+    color: #fff;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+}
+.checkout-summary {
+    width: 350px;
+}
+.summary-totals {
+    margin-top: 50px;
+}
+.summary-line {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    gap: 10px;
+    margin-bottom: 15px;
+    font-size: 12px;
+    font-weight: bold;
+}
+.underline-blank {
+    display: inline-block;
+    width: 100px;
+    border-bottom: 1px solid #000;
+}
+.total-line {
+    font-size: 14px;
+}

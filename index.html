@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KERA — Авторская керамика</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header-black">
+        <div class="logo">KERA</div>
+        <nav>
+            <a href="catalog.html">Каталог</a>
+            <a href="order.html">Заказ</a>
+            <a href="about.html">О нас</a>
+            <a href="delivery.html">Оплата и доставка</a>
+        </nav>
+        <div class="cart">Корзина</div>
+    </header>
+
+    <section class="hero-white">
+        <div class="hero-bg-blur">KERA</div>
+        
+        <div class="star star-1">*</div>
+        <div class="star star-2">*</div>
+        <div class="star star-3">*</div>
+        <div class="star star-4">*</div>
+
+        <div class="hero-content">
+            <h1>KERA</h1>
+            <p>Бренд <b>KERA</b> — это коллекция уникальных изделий ручной работы,<br>
+            созданной с любовью к искусству<br>
+            Каждое изделие отличается особым дизайном, оригинальностью и высоким<br>
+            качеством</p>
+            <p class="hero-subtext">Познакомьтесь с нашим ассортиментом ведь вас уже там ждет то, что вы ищете</p>
+             <a href="catalog.html" class="btn-catalog">КАТАЛОГ</a>
+        </div>
+    </section>
+
+    <section class="featured-black">
+        <div class="featured-info">
+            <h2>ХИТ ПРОДАЖ:</h2>
+            <p class="featured-desc">КЕРАМИЧЕСКИЕ<br>ГОРШКИ "WALLS"</p>
+            <p class="featured-price">4000 р.</p>
+            <button class="btn-add-cart">ДОБАВИТЬ В КОРЗИНУ</button>
+        </div>
+        <div class="featured-img">
+            <img src="images/hit.png" alt="Горшки Walls">
+        </div>
+    </section>
+
+    <footer class="footer-black">
+        <div class="contacts-left">
+            <p>insta: @KERA</p>
+            <p>telegram: @KERA</p>
+        </div>
+        <div class="contacts-right">
+            <p>email: itsKERA52@gmail.com</p>
+            <p>phone: +7 999 999 9999</p>
+        </div>
+        </footer>
+        <div class="cart-overlay" id="cartOverlay">
+        <div class="cart-panel">
+            <div class="cart-header">
+                <h2>ВАШ ЗАКАЗ:</h2>
+                <button class="close-cart" id="closeCart">&times;</button>
+            </div>
+            
+            <div class="cart-items">
+                <div class="cart-item">
+                    <img src="images/posuda4.png" alt="Керамика">
+                    <div class="cart-item-controls">
+                        <button class="qty-btn">&minus;</button>
+                        <span class="qty">1</span>
+                        <button class="qty-btn">+</button>
+                    </div>
+                    <span class="price-tech">4000 р.</span>
+                    <button class="remove-item">&times;</button>
+                </div>
+            </div>
+
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>СУММА:</span>
+                    <span class="price-tech">4000 р.</span>
+                </div>
+                <a href="checkout.html" class="btn-checkout">ОФОРМИТЬ ЗАКАЗ</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const cartBtn = document.querySelector('.cart');
+        const cartOverlay = document.getElementById('cartOverlay');
+        const closeCartBtn = document.getElementById('closeCart');
+
+        // Открыть корзину
+        cartBtn.addEventListener('click', () => {
+            cartOverlay.classList.add('active');
+        });
+
+        // Закрыть корзину по крестику
+        closeCartBtn.addEventListener('click', () => {
+            cartOverlay.classList.remove('active');
+        });
+
+        // Закрыть корзину при клике на темный фон
+        cartOverlay.addEventListener('click', (e) => {
+            if(e.target === cartOverlay) {
+                cartOverlay.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>

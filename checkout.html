@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KERA — Оформление заказа</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-checkout">
+    <header class="header-black">
+        <a href="index.html" class="logo" style="color: white; text-decoration: none;">KERA</a>
+        <nav>
+            <a href="catalog.html">Каталог</a>
+            <a href="order.html">Заказ</a>
+            <a href="about.html">О нас</a>
+            <a href="delivery.html">Оплата и доставка</a>
+        </nav>
+        <div class="cart">
+            <span class="cart-dot"></span> Корзина
+        </div>
+    </header>
+
+    <main class="checkout-container">
+        <div class="checkout-top">
+            <a href="catalog.html" class="back-link">&larr;</a>
+            <h1 class="checkout-title">ВАШ ЗАКАЗ</h1>
+        </div>
+
+        <div class="checkout-layout">
+            <div class="checkout-form-section">
+                <p class="checkout-desc">После оформления заказа мы связываемся с вами для<br>уточнения деталей доставки.</p>
+                
+                <form class="checkout-form">
+                    <div class="form-group">
+                        <label>ИМЯ</label>
+                        <input type="text" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label>ЭЛЕКТРОННАЯ ПОЧТА</label>
+                        <input type="email" class="form-input">
+                    </div>
+                    <div class="form-group phone-group">
+                        <label>ТЕЛЕФОН</label>
+                        <div class="phone-input-wrapper">
+                            <span class="flag">🇷🇺 ▼</span>
+                            <input type="tel" class="form-input" placeholder="+7 (000) 000 0000">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>ГОРОД</label>
+                        <input type="text" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label>ВТОРЫЕ СЛУЖБЫ</label>
+                        <input type="text" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label>ПОЛУЧАТЕЛЬ (ФИО)</label>
+                        <input type="text" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label>КОММЕНТАРИЙ</label>
+                        <input type="text" class="form-input">
+                    </div>
+                    
+                    <div class="form-checkbox">
+                        <input type="checkbox" id="policy" checked>
+                        <label for="policy">Согласие с политикой обработки данных</label>
+                    </div>
+
+                    <button type="button" class="btn-checkout-submit">ОФОРМИТЬ ЗАКАЗ</button>
+                </form>
+            </div>
+
+            <div class="checkout-summary">
+                <div class="cart-item">
+                    <img src="images/posuda4.png" alt="Кружка">
+                    <div class="cart-item-controls">
+                        <button class="qty-btn">&minus;</button>
+                        <span class="qty">1</span>
+                        <button class="qty-btn">+</button>
+                    </div>
+                    <span class="price-tech">4000 р.</span>
+                    <button class="remove-item">&times;</button>
+                </div>
+
+                <div class="summary-totals">
+                    <div class="summary-line">
+                        <span>АДРЕС:</span>
+                        <span class="underline-blank"></span>
+                    </div>
+                    <div class="summary-line total-line">
+                        <span>ИТОГОВАЯ СУММА:</span>
+                        <span class="price-tech">4000 р.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer-black">
+        <div class="contacts-left">
+            <p>insta: @KERA</p>
+            <p>telegram: @KERA</p>
+        </div>
+        <div class="contacts-right">
+            <p>email: itsKERA52@gmail.com</p>
+            <p>phone: +7 999 999 9999</p>
+        </div>
+    </footer>
+</body>
+</html>
